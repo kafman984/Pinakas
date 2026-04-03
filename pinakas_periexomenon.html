@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Πίνακας Περιεχομένων</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+        .demo-box {
+            margin-bottom: 20px;
+        }
+        .code-box {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre;
+            font-family: monospace;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007acc;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005f99;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Demo: Πίνακας Περιεχομένων</h2>
+
+    <div class="demo-box">
+        <!-- Visible table -->
+        <table cellpadding="15" style="width:100%; max-width:500px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); background:#fff; margin:10px 0;">
+            <tbody>
+                <tr>
+                    <td style="font-size:15px; line-height:1.6;">
+                        <strong style="font-size:18px;">Πίνακας περιεχομένων</strong><br>
+                        τίτλος<br>
+                        τίτλος<br>
+                        τίτλος
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Copy & Paste HTML Code</h3>
+    <div class="code-box" id="codeBox">
+&lt;table cellpadding="15" style="width:100%; max-width:500px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); background:#fff; margin:10px 0;"&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td style="font-size:15px; line-height:1.6;"&gt;
+                &lt;strong style="font-size:18px;"&gt;Πίνακας περιεχομένων&lt;/strong&gt;&lt;br&gt;
+                τίτλος&lt;br&gt;
+                τίτλος&lt;br&gt;
+                τίτλος
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+    </div>
+
+    <button onclick="copyCode()">Copy HTML</button>
+
+    <script>
+        function copyCode() {
+            const code = document.getElementById("codeBox").innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                alert("Ο κώδικας αντιγράφηκε στο clipboard!");
+            }).catch(err => {
+                alert("Σφάλμα κατά την αντιγραφή: " + err);
+            });
+        }
+    </script>
+
+</body>
+</html>
